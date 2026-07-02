@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OptiCrop AI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+
+    </div>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <span>OptiCrop</span>
+
+        </div>
+
+        <a href="#predict">Predict Crop</a>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <span class="tag">
+
+            AI Powered Crop Recommendation
+
+        </span>
+
+        <h1>
+
+            Smart Crop Recommendation
+            <br>
+            For Modern Agriculture
+
+        </h1>
+
+        <p>
+
+            OptiCrop recommends the most suitable crop using soil nutrients,
+            temperature, humidity, pH and rainfall through Machine Learning.
+
+        </p>
+
+        <a href="#predict" class="hero-btn">
+
+            Predict Crop
+
+        </a>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>AI Powered</h3>
+
+            <p>
+
+                Machine Learning based prediction.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Fast</h3>
+
+            <p>
+
+                Instant crop recommendation.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <i class="fa-solid fa-leaf"></i>
+
+            <h3>Sustainable</h3>
+
+            <p>
+
+                Better farming decisions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section class="about">
+
+        <div class="about-card">
+
+            <h2>
+
+                Why Choose OptiCrop?
+
+            </h2>
+
+            <p>
+
+                Choosing the right crop is one of the most important decisions
+                in agriculture. OptiCrop uses Machine Learning to recommend the
+                best crop based on soil nutrients and environmental conditions.
+
+            </p>
+
+            <div class="about-grid">
+
+                <div>
+
+                    <h3>✔ AI Prediction</h3>
+
+                    <p>
+
+                        Intelligent recommendation using Machine Learning.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>✔ Easy to Use</h3>
+
+                    <p>
+
+                        Simple interface for quick prediction.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>✔ Better Yield</h3>
+
+                    <p>
+
+                        Helps farmers make informed decisions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Prediction -->
+
+    <section class="predict-section" id="predict">
+
+        <div class="card">
+
+            <h2>
+
+                Crop Recommendation
+
+            </h2>
+
+            <form id="predictionForm">
+
+                <div class="grid">
+
+                    <input type="number" id="N" min="0" max="140" placeholder="Nitrogen (N)" required>
+
+                    <input type="number" id="P" min="0" max="145" placeholder="Phosphorus (P)" required>
+
+                    <input type="number" id="K" min="0" max="205" placeholder="Potassium (K)" required>
+
+                    <input type="number" id="temperature" min="0" max="50" step="0.01" placeholder="Temperature (°C)" required>
+
+                    <input type="number" id="humidity" min="0" max="100" step="0.01" placeholder="Humidity (%)" required>
+
+                    <input type="number" id="ph" min="0" max="14" step="0.01" placeholder="Soil pH" required>
+
+                    <input type="number" id="rainfall" min="0" max="500" step="0.01" placeholder="Rainfall (mm)" required>
+
+
+
+                </div>
+
+
+                <div class="btn-group">
+
+                <button type="submit" class="predict-btn">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Predict Crop
+
+                </button>
+
+                <button type="reset" class="reset-btn">
+
+                    Reset
+
+                </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Result -->
+
+        <section class="result hidden" id="resultCard">
+
+        <i class="fa-solid fa-seedling result-icon"></i>
+
+        <h2>Recommended Crop</h2>
+
+        <h1 id="cropName"></h1>
+
+        <p class="success-text">
+            This crop is best suited for the given soil and environmental conditions.
+        </p>
+
+        <div class="result-info">
+
+            <div class="detail-card">
+
+                <h4>Prediction Status</h4>
+
+                <p>Successful</p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Technology</h4>
+
+                <p>Machine Learning</p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Inputs Used</h4>
+
+                <p>7 Parameters</p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Footer -->
+
+    <footer>
+
+        <h2>
+
+            OptiCrop
+
+        </h2>
+
+        <p>
+
+            Smart Agricultural Production Optimization Engine
+
+        </p>
+
+        <p>
+
+            Built with Flask • Python • Machine Learning
+
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
