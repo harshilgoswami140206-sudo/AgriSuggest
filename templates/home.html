@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OptiCrop | Home</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+
+    </div>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <span>OptiCrop</span>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/" class="active">Home</a>
+
+            <a href="/about">About</a>
+
+            <a href="/findyourcrop">Find Your Crop</a>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <span class="tag">
+
+            AI Powered Crop Recommendation
+
+        </span>
+
+        <h1>
+
+            Smart Crop Recommendation
+            <br>
+            Using Machine Learning
+
+        </h1>
+
+        <p>
+
+            OptiCrop helps farmers identify the most suitable crop based on soil
+            nutrients and environmental conditions. Our intelligent prediction
+            system enables better farming decisions with fast and reliable crop
+            recommendations.
+
+        </p>
+
+        <a href="/findyourcrop" class="hero-btn">
+
+            Predict Your Crop
+
+        </a>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>AI Prediction</h3>
+
+            <p>
+
+                Machine Learning model trained to recommend the most suitable
+                crop for your field.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>Accurate Analysis</h3>
+
+            <p>
+
+                Uses soil nutrients and environmental parameters to generate
+                reliable recommendations.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <i class="fa-solid fa-leaf"></i>
+
+            <h3>Smart Farming</h3>
+
+            <p>
+
+                Helps farmers improve productivity through data-driven
+                agricultural decisions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Call To Action -->
+
+    <section class="hero">
+
+        <h2>
+
+            Ready to Discover the Best Crop?
+
+        </h2>
+
+        <p>
+
+            Enter your soil and environmental conditions to receive an instant
+            AI-powered crop recommendation.
+
+        </p>
+
+        <a href="/findyourcrop" class="hero-btn">
+
+            Get Started
+
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h2>
+
+            OptiCrop
+
+        </h2>
+
+        <p>
+
+            Smart Agricultural Production Optimization Engine
+
+        </p>
+
+        <p>
+
+            Developed using Flask • Machine Learning • Python
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
