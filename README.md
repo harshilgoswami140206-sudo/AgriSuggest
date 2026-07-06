@@ -1,114 +1,80 @@
-# 🌱 OptiCrop
+# OptiCrop
 
-# Smart Agricultural Production Optimization Engine
+OptiCrop is a crop recommendation system built using Flask and Machine Learning.
 
-OptiCrop is a Machine Learning-powered web application that recommends the most suitable crop based on soil nutrients and environmental conditions. The system assists farmers and agricultural enthusiasts in making informed crop selection decisions through predictive analytics.
+The application recommends a suitable crop based on soil nutrients and environmental conditions. Users enter values like Nitrogen, Phosphorus, Potassium, Temperature, Humidity, pH, and Rainfall, and the model predicts the most suitable crop.
 
----
-
-# 📖 Project Overview
-
-Agriculture plays a vital role in food production, and selecting the right crop significantly impacts productivity and profitability. OptiCrop uses Machine Learning algorithms to analyze soil nutrients and environmental parameters, providing intelligent crop recommendations.
-
-The application offers a clean, responsive, and user-friendly interface where users can input soil and weather conditions to receive instant crop predictions.
+The project uses a Random Forest model for prediction and a simple Flask web application for the user interface.
 
 ---
 
-# ✨ Features
+## Features
 
-- AI-based Crop Recommendation
-- Responsive Modern User Interface
-- Machine Learning Prediction Model
-- Real-time Crop Prediction
-- Soil Nutrient Analysis
-- Environmental Parameter Analysis
-- Input Validation
-- Loading Animation
-- Flask-powered Web Application
-- Interactive User Experience
+- Recommend crops based on soil and environmental conditions
+- Machine learning model using Random Forest
+- Simple web interface built with Flask
+- Exploratory Data Analysis (EDA) on the dataset
+- Clean and easy-to-use interface
 
 ---
 
-# 📊 Input Parameters
+## Screenshots
 
-The prediction model takes the following inputs:
+### Home Page
 
-- Nitrogen (N)
-- Phosphorus (P)
-- Potassium (K)
-- Temperature (°C)
-- Humidity (%)
-- Soil pH
-- Rainfall (mm)
+![Home Page](screenshots/home-page.png)
 
----
+### About Page
 
-# 🌾 Predicted Crops
+![About Page](screenshots/about-page.png)
 
-The model can recommend crops including:
+### Find Your Crop
 
-- Rice
-- Maize
-- Chickpea
-- Kidney Beans
-- Pigeon Peas
-- Moth Beans
-- Mung Bean
-- Black Gram
-- Lentil
-- Pomegranate
-- Banana
-- Mango
-- Grapes
-- Watermelon
-- Muskmelon
-- Apple
-- Orange
-- Papaya
-- Coconut
-- Cotton
-- Jute
-- Coffee
+![Find Your Crop](screenshots/find-crop-page.png)
+
+### Recommendation Result
+
+![Recommendation Result](screenshots/crop-recommendation-page.png)
 
 ---
 
-# 🛠️ Technologies Used
+## How It Works
 
-## Frontend
+1. The user enters soil and environmental values.
+2. Flask receives the input from the web page.
+3. The trained Random Forest model processes the input.
+4. The model predicts the most suitable crop.
+5. The recommended crop is displayed on the result page.
 
-- HTML5
-- CSS3
-- JavaScript
+---
 
-## Backend
+## Tech Stack
 
+**Backend**
 - Python
 - Flask
 
-## Machine Learning
-
+**Machine Learning**
 - Scikit-learn
+- Random Forest Classifier
+
+**Frontend**
+- HTML
+- CSS
+- JavaScript
+
+**Data Analysis**
 - Pandas
 - NumPy
-
-## Data Visualization
-
 - Matplotlib
 - Seaborn
 
-## Development Tools
-
-- Visual Studio Code
-- Jupyter Notebook
-- Git
-- GitHub
-
 ---
 
-# 📁 Project Structure
+## Project Structure
 
-```
-OptiCrop
+```text
+OptiCrop/
 │
 ├── app.py
 ├── model.pkl
@@ -116,10 +82,19 @@ OptiCrop
 ├── README.md
 │
 ├── dataset/
+│   ├── Crop_recommendation.csv
+│   ├── train.csv
+│   └── test.csv
 │
 ├── notebook/
 │   ├── EDA.ipynb
 │   └── train_model.ipynb
+│
+├── screenshots/
+│   ├── home-page.png
+│   ├── about-page.png
+│   ├── find-crop-page.png
+│   └── crop-recommendation-page.png
 │
 ├── static/
 │   ├── css/
@@ -127,38 +102,58 @@ OptiCrop
 │   └── images/
 │
 └── templates/
+    ├── home.html
+    ├── about.html
+    ├── findyourcrop.html
+    ├── result.html
     └── index.html
 ```
 
 ---
 
-# ⚙️ Installation
+## Installation
 
-## Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/aadith-v/OptiCrop.git
 ```
 
-## Navigate to the project folder
+Move to the project folder:
 
 ```bash
 cd OptiCrop
 ```
 
-## Install dependencies
+Create a virtual environment (optional):
+
+**Windows**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/macOS**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the application
+Run the application:
 
 ```bash
 python app.py
 ```
 
-## Open your browser
+Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
@@ -166,73 +161,37 @@ http://127.0.0.1:5000
 
 ---
 
-# 🧠 Machine Learning Workflow
+## Dataset
 
-1. Dataset Collection
-2. Data Preprocessing
-3. Exploratory Data Analysis (EDA)
-4. Feature Engineering
-5. Model Training
-6. Model Evaluation
-7. Model Serialization
-8. Flask Backend Integration
-9. Frontend Development
-10. Crop Prediction
+The project uses the Crop Recommendation Dataset containing soil nutrients and environmental parameters to predict the most suitable crop.
 
----
+**Input Features**
 
-# 🎯 Objectives
+- Nitrogen (N)
+- Phosphorus (P)
+- Potassium (K)
+- Temperature
+- Humidity
+- pH
+- Rainfall
 
-- Recommend the most suitable crop based on soil and environmental conditions.
-- Improve agricultural decision-making using Machine Learning.
-- Provide a simple and interactive web application for crop recommendation.
-- Promote data-driven farming practices.
+**Output**
+
+- Recommended Crop
 
 ---
 
-# 📌 Future Enhancements
+## Future Improvements
 
-- Fertilizer Recommendation System
-- Weather API Integration
-- Crop Disease Prediction
-- Crop Yield Prediction
-- Multi-language Support
-- Mobile Application
-- Cloud Deployment
-
----
-
-# 👨‍💻 Team Members
-
-- **Sabyasachi Panda** — Team Lead
-- **Aadith V**
-- **Kasi Viswanath Manda**
-- **Jyothi Bellamkonda**
-- **Rineeka Vyshnavi Kaveti**
+- Deploy the application online
+- Add weather API integration
+- Fertilizer recommendation
+- Crop disease prediction
+- Mobile application
+- Support for multiple languages
 
 ---
 
-# 📄 License
+## License
 
-This project was developed for academic and educational purposes as part of a Machine Learning project.
-
----
-
-# 🙏 Acknowledgements
-
-- SRM University-AP
-- Python Software Foundation
-- Flask
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-
----
-
-## 🌱 OptiCrop
-
-### Smart Agricultural Production Optimization Engine
-
-**Empowering Agriculture Through Machine Learning**
+This project is available for learning and educational purposes.
